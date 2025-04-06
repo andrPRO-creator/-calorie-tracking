@@ -76,7 +76,7 @@
 
 
 &nbsp;&nbsp;&nbsp;GET
-- /foods&nbsp;&nbsp;&nbsp;получение списка всех блюд
+- /foods/&nbsp;&nbsp;&nbsp;получение списка всех блюд
 
 
 - /foods/{id}&nbsp;&nbsp;&nbsp;получение блюда по id
