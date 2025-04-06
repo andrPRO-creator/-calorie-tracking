@@ -4,6 +4,7 @@ import com.andrpro.calorie_tracking.dto.FoodIntakeDto;
 import com.andrpro.calorie_tracking.dto.FoodItemDto;
 import com.andrpro.calorie_tracking.dto.NutritionalFoodDto;
 import com.andrpro.calorie_tracking.entity.*;
+import com.andrpro.calorie_tracking.exception.BadRequestException;
 import com.andrpro.calorie_tracking.exception.ResourceNotFoundException;
 import com.andrpro.calorie_tracking.repository.NutritionalFoodRepository;
 import com.andrpro.calorie_tracking.repository.UserRepository;
@@ -29,8 +30,10 @@ public class FoodIntakeService {
 
     @Transactional
     public List<FoodIntakeDto> getDailyFoodIntake(Long userId, LocalDate date) {
-        List<FoodIntake> intakes = foodIntakeRepository.findByUsersIdAndDateWithItems(userId, date);
-        return intakes.stream()
+        return foodIntakeRepository.findByUsersIdAndDateWithItems(userId, date)
+                .filter(list -> !list.isEmpty())
+                .orElseThrow(() -> new BadRequestException("No meals found for date: " + date))
+                .stream()
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
     }
@@ -67,7 +70,10 @@ public class FoodIntakeService {
 
 
     public int getCaloriesPerDay(Long userId, LocalDate date) {
-        return foodIntakeRepository.findTotalCaloriesByUserAndDate(userId, date);
+        return foodIntakeRepository
+                .findTotalCaloriesByUserAndDate(userId, date)
+                .orElseThrow(() -> new BadRequestException(
+                        String.format("No calories found for the current query")));
     }
 
     @Transactional
@@ -96,5 +102,14 @@ public class FoodIntakeService {
 
         foodIntake.setItems(items);
         foodIntakeRepository.save(foodIntake);
+    }
+
+    @Transactional
+    public void deleteFoodIntakes(Long userId, LocalDate date, Meal meal) {
+        FoodIntake intake = foodIntakeRepository.findByUserIdDateAndMeal(userId, date, meal)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        String.format("Food intake not found for user %d on %s (%s)",
+                                userId, date, meal)));
+        foodIntakeRepository.delete(intake);
     }
 }

@@ -5,6 +5,7 @@ import com.andrpro.calorie_tracking.requests.FoodIntakeRequest;
 import com.andrpro.calorie_tracking.entity.FoodIntake;
 import com.andrpro.calorie_tracking.entity.Meal;
 import com.andrpro.calorie_tracking.services.FoodIntakeService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@Tag(name = "food_intakes")
 @RestController
 public class FoodIntakeController {
     @Autowired
@@ -40,5 +42,15 @@ public class FoodIntakeController {
     @GetMapping("/foodintakes/{user_id}/{date}") //получение калорий пользователя за день
     public int getCaloriesPerDay(@PathVariable Long user_id, @PathVariable LocalDate date){
         return foodIntakeService.getCaloriesPerDay(user_id,date);
+    }
+
+    @DeleteMapping("/foodintakes/{user_id}/{date}/{meal}")
+    public ResponseEntity<?> deleteFoodIntakes(
+            @PathVariable Long user_id,
+            @PathVariable LocalDate date,
+            @PathVariable Meal meal){
+
+        foodIntakeService.deleteFoodIntakes(user_id,date,meal);
+        return ResponseEntity.ok().build();
     }
 }

@@ -5,6 +5,7 @@ import com.andrpro.calorie_tracking.dto.CalorieComplianceDto;
 import com.andrpro.calorie_tracking.requests.UserRequest;
 import com.andrpro.calorie_tracking.entity.User;
 import com.andrpro.calorie_tracking.services.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@Tag(name = "users")
 @RestController
 public class UserController {
     @Autowired

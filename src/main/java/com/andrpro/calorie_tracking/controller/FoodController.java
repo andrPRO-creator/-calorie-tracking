@@ -4,11 +4,13 @@ import com.andrpro.calorie_tracking.dto.AckDto;
 import com.andrpro.calorie_tracking.requests.FoodRequest;
 import com.andrpro.calorie_tracking.entity.NutritionalFood;
 import com.andrpro.calorie_tracking.services.FoodService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "foods")
 @RestController
 public class FoodController {
     @Autowired
@@ -23,10 +25,16 @@ public class FoodController {
         return foodService.getFood(id);
     }
 
-    @GetMapping("/foods") //получение списка всех продуктов
+    /*
+    * получение списка всех продуктов
+    */
+    @GetMapping("/foods/")
     public List<NutritionalFood> getAllFoods(){return foodService.getAllFoods();}
 
-    @PostMapping("/foods/") //добавление продукта
+    /*
+     * добавление продукта
+     */
+    @PostMapping("/foods/")
     public void createFood(@RequestBody FoodRequest foodRequest){
         foodService.createFood(foodRequest);
     }
