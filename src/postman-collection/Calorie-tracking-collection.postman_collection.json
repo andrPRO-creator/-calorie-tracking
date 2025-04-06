@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "cfc1884e-aeef-474b-a65f-1cb0c9b618b4",
+		"name": "Calorie-tracking-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37604184"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/users/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Alex\",\r\n  \"email\": \"alex124@mail.ru\",\r\n  \"age\": 20,\r\n  \"weight\": 89.5,\r\n  \"height\": 178,\r\n  \"target\": \"LOSE_WEIGHT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:8080/users/' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"name\": \"Alex\",\r\n  \"email\": \"alex124@mail.ru\",\r\n  \"age\": 20,\r\n  \"weight\": 89.5,\r\n  \"height\": 178,\r\n  \"target\": \"LOSE_WEIGHT\"\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8080/users/' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/daily-calorie-norm",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/1/daily-calorie-norm",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"daily-calorie-norm"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8080/users/1/daily-calorie-norm' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"fokrtw@gmail.com\",\r\n  \"age\": 21,\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'PATCH' \\\r\n  'http://localhost:8080/users/1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"email\": \"fokrtw@gmail.com\",\r\n  \"age\": 21,\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8080/users/1' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foods/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Морковь\",\r\n  \"calories\": 100,\r\n  \"protein\": 1,\r\n  \"fat\": 0,\r\n  \"carbohydrate\": 12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/foods/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foods",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:8080/foods/' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"name\": \"Морковь\",\r\n  \"calories\": 100,\r\n  \"protein\": 1,\r\n  \"fat\": 0,\r\n  \"carbohydrate\": 12\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foods/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Сало\",\r\n  \"calories\": 600,\r\n  \"protein\": 5,\r\n  \"fat\": 43,\r\n  \"carbohydrate\": 52\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/foods/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foods",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:8080/foods/' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"name\": \"Сало\",\r\n  \"calories\": 600,\r\n  \"protein\": 5,\r\n  \"fat\": 43,\r\n  \"carbohydrate\": 52\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foods",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/foods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foods"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8080/foods' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foods/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/foods/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foods",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8080/foods/1' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foodintakes/1/BREAKFAST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"nutritionalFoodId\": 1,\r\n    \"gram\": 542\r\n  },\r\n{\r\n\"nutritionalFoodId\": 2,\r\n    \"gram\": 300\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/foodintakes/1/BREAKFAST",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foodintakes",
+						"1",
+						"BREAKFAST"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:8080/foodintakes/1/BREAKFAST' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '[\r\n  {\r\n    \"nutritionalFoodId\": 1,\r\n    \"gram\": 542\r\n  },\r\n{\r\n\"nutritionalFoodId\": 2,\r\n    \"gram\": 300\r\n}\r\n]'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foodintakes/1/DINNER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n\"nutritionalFoodId\": 2,\r\n    \"gram\": 259\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/foodintakes/1/DINNER",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foodintakes",
+						"1",
+						"DINNER"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:8080/foodintakes/1/DINNER' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '[\r\n{\r\n\"nutritionalFoodId\": 2,\r\n    \"gram\": 259\r\n}\r\n]'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foodintakes/1/2025-04-06",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/foodintakes/1/2025-04-06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foodintakes",
+						"1",
+						"2025-04-06"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8080/foodintakes/1/2025-04-06' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1/2025-04-04/calories-compliance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/1/2025-04-04/calories-compliance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1",
+						"2025-04-04",
+						"calories-compliance"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8080/users/1/2025-04-04/calories-compliance' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foodintakes/daily/1/2025-04-06",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/foodintakes/daily/1/2025-04-06",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foodintakes",
+						"daily",
+						"1",
+						"2025-04-06"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:8080/foodintakes/daily/1/2025-04-06' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'http://localhost:8080/users/1' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foods/1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/foods/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foods",
+						"1"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'http://localhost:8080/foods/1' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/foodintakes/1/2025-04-06/BREAKFAST",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/foodintakes/1/2025-04-06/BREAKFAST",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"foodintakes",
+						"1",
+						"2025-04-06",
+						"BREAKFAST"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'http://localhost:8080/foodintakes/1/2025-04-06/BREAKFAST' \\\r\n  -H 'accept: */*'"
+			},
+			"response": []
+		}
+	]
+}
